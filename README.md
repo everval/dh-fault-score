@@ -1,17 +1,19 @@
 # A physically informed changepoint score for fault prioritisation in district heating
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24175348.svg)](https://doi.org/10.5281/zenodo.24175348)
+
 Code accompanying the paper *A Physically Informed Changepoint Score for Fault
 Prioritisation in District Heating* (Bugajski, Pedersen, Vera-Valdés,
 Pomianowski and Marszal-Pomianowska).
 
-The method runs the physically informed changepoint score for fault detection on the daily temperature difference $\Delta T = T_\mathrm{supply} - T_\mathrm{return}$ and the flow of a domestic hot water meter. BEAST is the changepoint detection algorithm used in the method but it can be replaced with any other changepoint detection algorithm. It scores each detected changepoint by its posterior probability, its deviation from recent operation, its jump size, its local consistency and its physical direction. It then ranks installations for inspection and reports when the strongest unfavourable change happened. The changes are found without using the report date.
+The method runs the physically informed changepoint score for fault detection on the daily temperature difference $\Delta T = T_\mathrm{supply} - T_\mathrm{return}$ and the flow of a district-heating heat meter. BEAST is the changepoint detection algorithm used in the method but it can be replaced with any other changepoint detection algorithm. It scores each detected changepoint by its posterior probability, its deviation from recent operation, its jump size, its local consistency and its physical direction. It then ranks installations for inspection and reports when the strongest unfavourable change happened. The changes are found without using the report date.
 
 The repository contains the method as an installable Python package,
 `dhfault`. The heat meter data used in the paper are not public, so the
 repository also includes synthetic data that resemble them, and a script that
 runs the method on them.
 
-Archived on Zenodo, DOI to be added.
+Archived on Zenodo: [doi:10.5281/zenodo.24175348](https://doi.org/10.5281/zenodo.24175348).
 
 ## Installation
 
@@ -217,7 +219,8 @@ the full definitions.
 
 ## Citation
 
-If you use this code, please cite the paper (see `CITATION.cff`).
+If you use this code, please cite the paper (see `CITATION.cff`). The software is archived on Zenodo at
+<https://doi.org/10.5281/zenodo.24175348>.
 
 ## License
 

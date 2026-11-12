@@ -3,6 +3,7 @@ message: "If you use this software, please cite the paper."
 title: "dh-fault-score: a physically informed changepoint score for fault prioritisation in district heating"
 version: 0.1.0
 license: MIT
+doi: "10.5281/zenodo.24175348"
 repository-code: "https://github.com/everval/dh-fault-score"
 authors:
   - family-names: Bugajski
