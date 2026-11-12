@@ -1,0 +1,5 @@
+case,channel,date,days_before_end,contribution,direction
+fault_both,delta_t,2026-03-10,22,-6.925999768134177,unfavourable
+fault_both,flow,2026-03-10,22,-0.3215258276446123,unfavourable
+fault_both,flow,2026-03-15,17,0.006871893230085513,favourable
+fault_delta_t,delta_t,2026-02-18,42,-5.138708545957224,unfavourable

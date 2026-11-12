@@ -1,0 +1,4 @@
+rank,case,tier,joint_evidence_P_h,summed_score_S_h,S_delta_t,strongest_unfavourable_delta_t_date,strongest_unfavourable_delta_t_days_before_end,S_flow,strongest_unfavourable_flow_date,strongest_unfavourable_flow_days_before_end,true_fault_onset
+1,fault_both,1,2.226887807715734,-7.240653702548704,-6.925999768134177,2026-03-10,22,-0.31465393441452677,2026-03-10,22,2026-03-10
+2,fault_delta_t,2,0.0,-5.138708545957224,-5.138708545957224,2026-02-18,42,0.0,,,2026-02-18
+3,no_fault,2,0.0,0.0,0.0,,,0.0,,,

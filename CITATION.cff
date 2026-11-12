@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper."
+title: "dh-fault-score: a physically informed changepoint score for fault prioritisation in district heating"
+version: 0.1.0
+license: MIT
+repository-code: "https://github.com/everval/dh-fault-score"
+authors:
+  - family-names: Bugajski
+    given-names: Tanja Korsten
+    orcid: "https://orcid.org/0009-0001-5546-8116"
+  - family-names: Pedersen
+    given-names: Nicolai Peder Bülow
+    orcid: "https://orcid.org/0009-0006-9405-4828"
+  - family-names: Vera-Valdés
+    given-names: J. Eduardo
+    orcid: "https://orcid.org/0000-0002-0337-8055"
+  - family-names: Pomianowski
+    given-names: Michal Zbigniew
+    orcid: "https://orcid.org/0000-0002-9187-201X"
+  - family-names: Marszal-Pomianowska
+    given-names: Anna
+    orcid: "https://orcid.org/0000-0002-3195-7388"
+preferred-citation:
+  type: article
+  title: "A Physically Informed Changepoint Score for Fault Prioritisation in District Heating"
+  authors:
+    - family-names: Bugajski
+      given-names: Tanja Korsten
+    - family-names: Pedersen
+      given-names: Nicolai Peder Bülow
+    - family-names: Vera-Valdés
+      given-names: J. Eduardo
+    - family-names: Pomianowski
+      given-names: Michal Zbigniew
+    - family-names: Marszal-Pomianowska
+      given-names: Anna

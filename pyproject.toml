@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dh-fault-score"
+version = "0.1.0"
+description = "A physically informed changepoint score for fault prioritisation in district heating"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = ["numpy", "pandas", "Rbeast"]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+test = ["pytest", "matplotlib"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

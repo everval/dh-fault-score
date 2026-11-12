@@ -1,0 +1,4 @@
+case,window_start,window_end,fault_onset,fault_channels
+no_fault,2025-10-01,2026-04-01,,
+fault_both,2025-10-01,2026-04-01,2026-03-10,delta_t+flow
+fault_delta_t,2025-10-01,2026-04-01,2026-02-18,delta_t
