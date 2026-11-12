@@ -4,7 +4,7 @@ Code accompanying the paper *A Physically Informed Changepoint Score for Fault
 Prioritisation in District Heating* (Bugajski, Pedersen, Vera-Valdés,
 Pomianowski and Marszal-Pomianowska).
 
-The method runs the physically informed changepoint score for fault detection on the daily temperature difference ΔT = T_supply − T_return and the flow of a domestic hot water meter. BEAST is the changepoint detection algorithm used in the method but it can be replaced with any other changepoint detection algorithm. It scores each detected changepoint by its posterior probability, its deviation from recent operation, its jump size, its local consistency and its physical direction. It then ranks installations for inspection and reports when the strongest unfavourable change happened. The changes are found without using the report date.
+The method runs the physically informed changepoint score for fault detection on the daily temperature difference $\Delta T = T_\mathrm{supply} - T_\mathrm{return}$ and the flow of a domestic hot water meter. BEAST is the changepoint detection algorithm used in the method but it can be replaced with any other changepoint detection algorithm. It scores each detected changepoint by its posterior probability, its deviation from recent operation, its jump size, its local consistency and its physical direction. It then ranks installations for inspection and reports when the strongest unfavourable change happened. The changes are found without using the report date.
 
 The repository contains the method as an installable Python package,
 `dhfault`. The heat meter data used in the paper are not public, so the
@@ -78,8 +78,8 @@ more gradual and noisier.
 
 and writes to `results/`:
 
-- `summary.csv`: one row per window, with rank, tier, joint evidence P_h,
-  summed score S_h, the score of each channel, and the date of the strongest
+- `summary.csv`: one row per window, with rank, tier, joint evidence $P_h$,
+  summed score $S_h$, the score of each channel, and the date of the strongest
   unfavourable change in each channel.
 - `changepoints.csv`: every scored changepoint, with its window, channel,
   date, contribution and direction.
@@ -88,6 +88,31 @@ and writes to `results/`:
 The flow scores are small compared with the ΔT scores because flow is
 measured in m³/h and its jumps are small. This also holds for the paper's data
 (see Appendix A of the paper).
+
+### Plots
+
+Each plot shows supply and return temperature, ΔT, flow and the
+decision-score contributions of both channels. The grey band marks the 30-day
+reference period and the dashed line marks the true fault onset.
+
+**`fault_both`**: ΔT drops and the flow rises on 10 March 2026. Both channels
+give an unfavourable contribution on that day, so the window is in tier 1.
+
+![fault_both](results/fault_both.png)
+
+<details>
+<summary><b><code>fault_delta_t</code></b>: ΔT drops on 18 February 2026 and the flow is unchanged (tier 2)</summary>
+
+![fault_delta_t](results/fault_delta_t.png)
+
+</details>
+
+<details>
+<summary><b><code>no_fault</code></b>: normal operation, no unfavourable contributions</summary>
+
+![no_fault](results/no_fault.png)
+
+</details>
 
 ## Using the package
 
@@ -174,18 +199,20 @@ first.
 ## Method in brief
 
 For each channel, BEAST changepoints with posterior probability above 0.99,
-after the 30-day reference period, are moved to the largest jump within ±1
+after the 30-day reference period, are moved to the largest jump within $\pm 1$
 day. They are kept only if the series departs more than three standard
 deviations from its mean over the preceding 30 days. Each retained changepoint
 contributes
 
-  ±p · log(1 + Z) · log(1 + J) · log(1 + C),
+$$
+\pm\, p \cdot \log(1 + Z) \cdot \log(1 + J) \cdot \log(1 + C),
+$$
 
-where p is the posterior probability, Z the standardised deviation, J the jump
-size and C the local consistency. The sign is negative (unfavourable) for a
-fall in ΔT or a rise in flow. Windows with unfavourable evidence in both
-channels form the first tier, ranked by the product of that evidence, P_h. All
-others follow, ranked by the sum of the channel scores, S_h. See the paper for
+where $p$ is the posterior probability, $Z$ the standardised deviation, $J$ the jump
+size and $C$ the local consistency. The sign is negative (unfavourable) for a
+fall in $\Delta T$ or a rise in flow. Windows with unfavourable evidence in both
+channels form the first tier, ranked by the product of that evidence, $P_h$. All
+others follow, ranked by the sum of the channel scores, $S_h$. See the paper for
 the full definitions.
 
 ## Citation
